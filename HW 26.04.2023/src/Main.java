@@ -12,11 +12,11 @@ public class Main {
                 new Programmer("Pr.4", "Berlin", List.of(new Task(2, "updating", "finished", 2 ))),
                 new Programmer("Pr.5", "Dubai", List.of(new Task(4, "data analise", "finished", 7 ))),
                 new Programmer("Pr.6", "Hamburg", List.of(new Task(5, "visualisation", "in process", 15 ))),
-                new Programmer("Pr.7", "Tallin", List.of(new Task(6, "testing", "failed", 9 )))
+                new Programmer("Pr.7", "Tallinn", List.of(new Task(6, "testing", "failed", 9 )))
 
         );
 
-        List res =programmers.stream()
+        List res = programmers.stream()
                                 .flatMap(programmer -> programmer.getTasks().stream())
                                 .sorted(Comparator.comparingInt(Task::getDaysInProcessing)
                                     .reversed())
