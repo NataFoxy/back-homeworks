@@ -30,6 +30,24 @@ public class Main {
 //2. Дан список Person(name,age) необходимо написать метод, который возвращает Map<Person,Integer>,
 // где ключ это сам Person, а значение – сколько раз он встретился в списке.
 
+        List <Person> persons = List.of(
+                new Person("Frodo", 24),
+                new Person("Gendalf", 65),
+                new Person("Sam", 23),
+                new Person("Frodo", 24),
+                new Person("Pippin", 20),
+                new Person("Merry", 20),
+                new Person("Sam", 23),
+                new Person("Frodo", 24),
+                new Person("Gendalf", 65),
+                new Person("Frodo", 24),
+                new Person("Gendalf", 65)
+        );
+
+        Map<String, Long> map1 = persons.stream()
+                .collect(Collectors.groupingBy(Person::toString, Collectors.counting()));
+        System.out.println(map1);
+
 
     }
 
