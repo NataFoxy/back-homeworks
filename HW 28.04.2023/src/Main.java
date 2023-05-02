@@ -24,7 +24,7 @@ public class Main {
 
         Map<Person, List> map = accounts.stream()
                 .collect(Collectors.toMap(o -> o.getPerson(), o -> List.of(o.getIban()+": "+o.getBalance()),
-                        (o1, o2) -> (List.of(o1+","+o2))));
+                        (o1, o2) -> (List.of(o1+"***"+o2))));
         System.out.println(map);
 
 //2. Дан список Person(name,age) необходимо написать метод, который возвращает Map<Person,Integer>,
